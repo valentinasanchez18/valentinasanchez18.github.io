@@ -1,0 +1,124 @@
+/* ==================================== */
+/* HOJA DE ESTILO EXTERNA (dashboard.css) */
+/* ==================================== */
+
+/* PALETA DE COLORES (Uso de HEX y HSL) */
+:root {
+    --color-fondo-app: #F4F6F6;
+    --color-primario: #1A5276; /* Azul Oscuro */
+    --color-secundario: hsl(200, 50%, 80%); /* Azul Claro (HSL) */
+}
+
+/* ESTILOS BASE (MOBILE-FIRST) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding-top: 60px; /* Espacio para la barra fija */
+    background-color: var(--color-fondo-app);
+}
+
+/* POSITION: FIXED para la barra de navegación */
+.navbar-fija {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--color-primario);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 100;
+
+}
+
+/* BOX MODEL y Estilo del Enlace como Tarjeta */
+.dashboard-contenedor {
+    padding: 20px;
+}
+
+/* Se aplican los estilos de tarjeta al enlace 'a.tarjeta-modulo' */
+.tarjeta-modulo {
+    /* Reseteo del estilo de enlace */
+    text-decoration: none; 
+    color: inherit; /* Hereda el color del texto del body */
+    display: block; /* Importante: Permite que el enlace ocupe todo el ancho */
+    
+    background-color: white;
+    /* Box Model */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* PSEUDO-CLASE: Interacción al pasar el mouse */
+.tarjeta-modulo:hover {
+    transform: translateY(-5px); /* Se eleva ligeramente */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-repasar {
+    background-color: #2ECC71; /* Botón de Repaso */
+    color: white;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* FLEXBOX: Alineación de los TAGS */
+.tags-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; 
+    margin: 10px 0;
+}
+
+.tag {
+    background-color: var(--color-secundario);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    color: var(--color-primario);
+}
+
+/* MEDIA QUERY (MOBILE-FIRST): Escritorio a partir de 992px */
+@media screen and (min-width: 992px) {
+    .dashboard-contenedor {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-between;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .tarjeta-modulo {
+        /* Asigna un tercio del ancho menos el espacio (gap) */
+        width: calc(33.33% - 15px); 
+    }
+   /* ==================================== */
+/* CLASES ESPECÍFICAS PARA DETALLE.HTML */
+/* ==================================== */
+
+.tarjeta-detalle {
+    /* Mismo Box Model que una tarjeta normal, pero más grande */
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.titulo-detalle {
+    color: var(--color-primario);
+    padding-bottom: 15px;
+    text-align: center;
+}
+}
